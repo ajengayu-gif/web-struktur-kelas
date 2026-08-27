@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur & Kegiatan Kelas XI TKJ 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================================
+           UBAH UKURAN FOTO PROFIL DI SINI (ADJUST SESUAI KEINGINAN)
+           ========================================================= */
+        :root {
+            --foto-size: 110px; /* Nilai ukuran foto profil pengurus */
+            
+            /* Palette Warna Ceria & Segar */
+            --bg-color: #f4fbfd;
+            --primary: #00b4d8;
+            --secondary: #ffb703;
+            --accent: #2a9d8f;
+            --card-bg: #ffffff;
+            --text-color: #2b2d42;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        header h1 { font-size: 2.5rem; font-weight: 700; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Foto Profil Pengurus */
+        .profile-img {
+            width: var(--foto-size);
+            height: var(--foto-size);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Kartu Struktur Organisasi */
+        .org-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .org-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            width: 220px;
+            border-top: 5px solid var(--primary);
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card.wali { border-color: var(--secondary); }
+        .card h3 { font-size: 1rem; color: #6c757d; text-transform: uppercase; margin-bottom: 5px; }
+        .card h4 { font-size: 1.1rem; }
+
+        /* Kartu Piket Kelas */
+        .piket-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .piket-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent);
+        }
+
+        .piket-card h3 {
+            background: var(--accent);
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Ruang Foto Tim Piket */
+        .piket-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent);
+        }
+
+        .piket-card ol {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* Galeri Kegiatan Kelas */
+        .kegiatan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .kegiatan-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .kegiatan-card:hover { transform: translateY(-5px); }
+
+        .kegiatan-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .kegiatan-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .kegiatan-info h4 { color: var(--primary); font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>XI TKJ 1</h1>
+        <p>Website Resmi Struktur Organisasi, Jadwal Piket & Kegiatan Kelas</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- STRUKTUR ORGANISASI -->
+        <h2 class="section-title">Struktur Organisasi</h2>
+        <div class="org-grid">
+            <!-- WALI KELAS -->
+            <div class="org-row">
+                <div class="card wali">
+                    <img src="foto foto kelas/pak yaniko.png" alt="Pak Yaniko" class="profile-img">
+                    <h3>Wali Kelas</h3>
+                    <h4>Pak Yaniko</h4>
+                </div>
+            </div>
+
+            <!-- KETUA & WAKIL -->
+            <div class="org-row">
+                <div class="card">
+                    <img src="foto foto kelas/X TKJ 1_20_Jhon Terry Eka Ramadhani.jpg" alt="Jhon Terry Eka Ramadhani" class="profile-img">
+                    <h3>Ketua Kelas</h3>
+                    <h4>Jhon Terry Eka R.</h4>
+                </div>
+                <div class="card">
+                    <img src="foto foto kelas/cila.jpg" alt="Calya Aqila Al Mauzavie" class="profile-img">
+                    <h3>Wakil Ketua</h3>
+                    <h4>Calya Aqila Al M.</h4>
+                </div>
+            </div>
+
+            <!-- SEKRETARIS & BENDAHARA -->
+            <div class="org-row">
+                <div class="card">
+                    <img src="foto foto kelas/X TKJ 1_27_Naura Yuwan Ramandhita.jpg" alt="Naura Yuwan Ramandhita" class="profile-img">
+                    <h3>Sekretaris 1</h3>
+                    <h4>Naura Yuwan R.</h4>
+                </div>
+                <div class="card">
+                    <img src="foto foto kelas/X TKJ 1_03_Amelia Fransiska Dyah C.jpg" alt="Amelia Fransiska Dyah C" class="profile-img">
+                    <h3>Sekretaris 2</h3>
+                    <h4>Amelia Fransiska D. C.</h4>
+                </div>
+                <div class="card">
+                    <img src="foto foto kelas/XT4_02_Ajeng Ayu Siswati.jpg" alt="Ajeng Ayu Siswati" class="profile-img">
+                    <h3>Bendahara 1</h3>
+                    <h4>Ajeng Ayu Siswati</h4>
+                </div>
+                <div class="card">
+                    <img src="foto foto kelas/X TKJ 2_10_Farlitha As Sabrin.jpg" alt="Farlitha As Sabrin" class="profile-img">
+                    <h3>Bendahara 2</h3>
+                    <h4>Farlitha As.Sabrin</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- JADWAL PIKET KELAS -->
+        <h2 class="section-title">Jadwal Piket Kelas</h2>
+        <div class="piket-grid">
+            
+            <div class="piket-card">
+                <h3>SENIN</h3>
+                <img src="foto foto kelas/piket hari senin.jpeg" alt="Kelompok Piket Senin" class="piket-img">
+                <ol>
+                    <li>Muhammad Ridhlo Maulana A.</li>
+                    <li>M. Devan Abdika Bangsa</li>
+                    <li>Fabrianz Torino Putranzah</li>
+                    <li>Ahmad Zidan Alfadly</li>
+                    <li>Acha Bryan Firdaus</li>
+                    <li>Ahmad Khubaisy Muhsinin</li>
+                    <li>Juan Dzakwan Hisyam</li>
+                </ol>
+            </div>
+
+            <div class="piket-card">
+                <h3>SELASA</h3>
+                <img src="foto foto kelas/piket hari selasa.jpeg" alt="Kelompok Piket Selasa" class="piket-img">
+                <ol>
+                    <li>Silva Talitha Dzakira</li>
+                    <li>Fizza Fahrian Dwidama</li>
+                    <li>Muhammad Farid Byantara K.</li>
+                    <li>Khalil Azzam Mudji M.</li>
+                    <li>Nico Putra Pramana</li>
+                    <li>Muhammad Akbar Brilian</li>
+                    <li>Ahmad Sony Fahreza</li>
+                </ol>
+            </div>
+
+            <div class="piket-card">
+                <h3>RABU</h3>
+                <img src="foto foto kelas/piket hari rabu.jpeg" alt="Kelompok Piket Rabu" class="piket-img">
+                <ol>
+                    <li>Naura Yuwan Ramandhita</li>
+                    <li>Nadine Anindya Alfian P.</li>
+                    <li>Amelia Fransiska Dyah C.</li>
+                    <li>Reyghen Ethan Bradly S.</li>
+                    <li>Theodorius Adi Fatlolon</li>
+                    <li>Calya Aqila Mouzavie</li>
+                    <li>Muhammad Yafiq Nadim R.</li>
+                </ol>
+            </div>
+
+            <div class="piket-card">
+                <h3>KAMIS</h3>
+                <img src="foto foto kelas/piket hari kamis.jpeg" alt="Kelompok Piket Kamis" class="piket-img">
+                <ol>
+                    <li>Ayyub</li>
+                    <li>Ajeng Ayu Siswati</li>
+                    <li>Dhaniel Wahyu Bahtiar</li>
+                    <li>Ken Kanzan Makhfiyan</li>
+                    <li>Baskoro Gadang W.</li>
+                    <li>Raditya Satrio Abimanyu</li>
+                    <li>Farlitha As.Sabrin</li>
+                </ol>
+            </div>
+
+            <div class="piket-card">
+                <h3>JUMAT</h3>
+                <img src="foto foto kelas/piket hari jumat.jpeg" alt="Kelompok Piket Jumat" class="piket-img">
+                <ol>
+                    <li>Zidni Nuro M.</li>
+                    <li>Dwi Affandy</li>
+                    <li>Lintang Albrian Anwar</li>
+                    <li>Zanuar Eka Prasetya</li>
+                    <li>Queensha Aurellia</li>
+                    <li>Jhon Terry Eka Ramadhani</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <!-- DOKUMENTASI KEGIATAN KELAS -->
+        <h2 class="section-title">Dokumentasi Kegiatan Kelas</h2>
+        <div class="kegiatan-grid">
+            <div class="kegiatan-card">
+                <img src="foto foto kelas/lomba kelas.jpeg" alt="Lomba Kelas" class="kegiatan-img">
+                <div class="kegiatan-info">
+                    <h4>Lomba Kelas / Agustusan</h4>
+                </div>
+            </div>
+            <div class="kegiatan-card">
+                <img src="foto foto kelas/menghias kelas.jpeg" alt="Menghias Kelas" class="kegiatan-img">
+                <div class="kegiatan-info">
+                    <h4>Menghias Kelas</h4>
+                </div>
+            </div>
+            <div class="kegiatan-card">
+                <img src="foto foto kelas/drama kelas.jpeg" alt="Drama Kelas" class="kegiatan-img">
+                <div class="kegiatan-info">
+                    <h4>Drama Kelas</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
